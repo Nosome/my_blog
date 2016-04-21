@@ -1,0 +1,77 @@
+/*通用样式*/
+body{background:#f4f4f4;}
+.wrapper{width:1000px; margin:0 auto;}
+.bg_white{padding:20px; background-color:#fff;}
+
+.pages{width:100%; margin:20px 0; text-align:center;}
+.pages a{display:inline-block; width:25px; height:25px; margin:0 3px; color:#fff; line-height:25px; text-align:center; background:#3089e6;}
+.pages a.prev_page,
+.pages a.next_page{width:55px; background:#1ab3f2;}
+.pages a.disable{color:#666; background:#ccc;}
+.pages a.on{color:#fff; background:#f90;}
+
+/*首页*/
+.indexTop_bg{width:100%; min-width:1000px; height:527px; background:url(../images/blog_02.jpg) repeat-x center top;}
+.index_top{width:100%; height:36px; padding:11px 0;}
+
+.nav{float:left;}
+.nav li{float:left; padding:0 20px; margin:0 10px; line-height:36px; position:relative;}
+.nav li.on{}
+
+.searchCon{float:right;}
+.searchCon input{color:#e3effa; padding:3px 25px 4px 12px; -webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px; border:1px solid #97c3f0; background:url(../images/blog_08.jpg) no-repeat 168px center;}
+.searchCon a{color:#e3effa;}
+
+.banner{width:1000px; height:438px; margin-top:15px; position:relative;}
+.banner a.ban_control{width:29px; height:50px; display:block; position:absolute; top:194px;}
+
+.content_left{width:590px; float:left;}
+.conLeft_nav{width:100%; background:url(../images/blog_25.jpg) repeat-x center bottom;}
+.conLeft_nav ul{}
+.conLeft_nav ul li{float:left; margin-right:20px; padding:0 5px 10px; font-size:18px; cursor:pointer;}
+.conLeft_nav ul li.on{background:url(../images/blog_22.jpg) repeat-x center bottom;}
+
+.conList{}
+.conList_dom{}
+.conList_dom li{width:100%; padding:15px 0; border-bottom:10px solid #e9e8e8;}
+.conList_dom_title{padding:10px 0;}
+.conList_dom_title span{float:right; color:#999;}
+.conList_dom_title a{color:#4ebef4; font-size:16px;}
+.conList_dom_contain{}
+.conList_dom_contain .conList_dom_img{width:212px; height:144px; float:left;}
+.conList_dom_contain .conList_dom_img img{width:100%;}
+.conList_dom_contain .conList_dom_detail{width:360px; float:right;}
+.conList_dom_contain .conList_dom_detail p{color:#666; font-size:16px; line-height:26px; display:block; height:90px;}
+.conList_dom_contain .conList_dom_detail .conList_dom_statis{margin-top:20px; line-height:22px;}
+.conList_dom_contain .conList_dom_detail .conList_dom_statis a{display:block; border-radius:4px; padding:0 8px; float:right; color:#fff; background:#1ab3f2;}
+.conList_dom_contain .conList_dom_detail .conList_dom_statis i{display:block; float:left; margin-right:15px; color:#999; padding-left:20px; font-style:normal; cursor:pointer;}
+.conList_dom_contain .conList_dom_detail .conList_dom_statis i.viewTimes{background:url(../images/blog_33.jpg) no-repeat 0px center;}
+.conList_dom_contain .conList_dom_detail .conList_dom_statis i.discussTimes{background:url(../images/blog_35.jpg) no-repeat 2px center;}
+
+.content_right{width:329px; float:right; padding-left:20px; border-left:1px dashed #d9d9d9}
+.date_view{width:100%; height:329px; background:#66A2E1;}
+
+.conRight_title{width:100%; margin-top:20px; background:url(../images/blog_25.jpg) repeat-x center bottom;}
+.conRight_title ul li{float:left; margin-right:20px; padding:0 5px 10px; font-size:18px;}
+.conRight_title ul li.on{background:url(../images/blog_22.jpg) repeat-x center bottom;}
+
+.ul_list ul li{padding:10px 0 10px 5px; border-bottom:1px dashed #ccc;}
+.new_recommend_list{height:254px; overflow:auto;}
+.my_photo_list{width:100%; height:210px; margin-top:15px; position:relative; background:#ccc;}
+.message_list{height:200px; overflow:auto;}
+.message_list ul li h3{color:#1BB4F2; font-weight:600; margin-bottom:3px;}
+.message_list ul li h3 span{color:#ccc; font-weight:normal;}
+.message_bar{width:204px; text-align:center; margin:15px auto;}
+.message_bar a{display:block; width:100px; float:left; padding:5px 0; color:#1ab3f2; border:1px solid #1AB3F2;}
+.message_bar a.on{color:#fff; background:#1ab3f2;}
+
+.footer{width:100%; text-align:center; background:#283442;}
+.footer p{color:#abaeb1; padding:12px 0;}
+
+
+
+
+
+
+
+

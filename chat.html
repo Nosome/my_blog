@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>仿QQ聊天列表向左拖拽滑出删除按钮效果</title>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<style>
+		body,h1,h2,h3,h4,p,dl,dd,ul,ol,form,input,textarea,th,td{margin: 0;padding: 0;}
+		em{font-style: normal;}
+		li{list-style: none;}
+		a{text-decoration: none;}
+		img{border: none;vertical-align: top;}
+		table{border-collapse: collapse;}
+		input,textarea{outline: none;}
+		textarea{resize:none;overflow: auto;}
+		html,body{font-family: "微软雅黑";height: 100%;}
+
+		body{position:relative; height:100%;}
+		#chat{ position:absolute; top:0; left:0; right:0; bottom:0;}
+		#chat .content{ position:absolute; top:0; right:0; bottom:51px; left:0; background:#eee;}
+		.bar_chat_layout{padding:8px 10px; position: absolute; bottom: 0; left: 0; right:0; z-index: 10; border-top: 1px solid #b1b1b1; background:#e8e7e7;}
+		.bar_chat_layout .chat_msg{width:80%; float:left; font-size:0;}
+		.bar_chat_layout .chat_msg textarea{width:100%; height: 32px; font-size:14px; color:#333; line-height:22px; border:1px solid #ccc; border-radius:5px;}
+		.bar_chat_layout .chat_send{width:15%; float:right;}
+		.bar_chat_layout .chat_send input[type='button']{width:100%; padding:7px 0 9px; font-size:14px; color:#333; border:1px solid #ccc; border-radius:5px;}
+	</style>
+</head>
+<body>
+	<div id="chat">
+		<div class="operat_content">
+			<div class="content js_resetHeight">
+				<div style="position: relative; width:100%; height: 100%;">
+					<div style="position:absolute; right:10px; bottom:10px;">
+						<!--聊天列表-->
+						你好
+					</div>
+				</div>
+			</div>
+			<div class="bar_chat_layout js_getPosition clearfix">
+				<div class="chat_msg">
+					<textarea id="txt_msg" placeholder="信息" ></textarea>
+				</div>
+				<div class="chat_send"><input type="button" value="发送" /></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function () {
+			$(document).on("input propertychange", "#txt_msg", function (e) {
+				var target = e.target;
+				// 保存初始高度，之后需要重新设置一下初始高度，避免只能增高不能减低。
+				var dh = $(target).attr('defaultHeight') || 0;
+				if (!dh) {
+					dh = target.clientHeight;
+					$(target).attr('defaultHeight', dh);
+				}
+				target.style.height = dh + 'px';
+				var clientHeight = target.clientHeight;
+				var scrollHeight = target.scrollHeight;
+				// 根据行的高度来做判断
+				if (clientHeight !== scrollHeight) {
+					if (scrollHeight > 76) {
+						target.style.height = "76px";
+						return false;
+					}
+					target.style.height = scrollHeight + 2 + "px";
+				}
+				var val_1 = $(this).val();
+				$('#txt_msg').text(val_1);
+
+				var content_b = $('.js_getPosition').height() + 17;
+				$('#chat .content').css({ bottom: content_b + 'px' });
+			});
+
+			var content_b = $('.js_getPosition').height() + 17;
+			$('#chat .content').css({ bottom: content_b + 'px' });
+			//聊天内容触碰后隐藏虚拟键盘
+			$(document).on('touchmove', '.js_resetHeight, .js_getPosition', function (e) {
+				$('#txt_msg').blur();
+				e.stopPropagation();
+			})
+			$('#txt_msg').focus(function () {
+				var content_b = $('.js_getPosition').height() + 17;
+
+				//alert($('body').height() + '||' + $(window).height())
+				var getPos = $('body').height() - $(window).height(); //获取虚拟键盘高度
+				console.log(getPos);
+				$('.js_getPosition').css({ bottom: getPos + 'px' });
+				$('#chat .content').css({ top: '0', left: '0', right: '0', bottom: getPos + content_b + 'px' });
+				$('#chat .operat_content').css({ top: '0', left: '0', right: '0', bottom: '0' });
+				$('body').css({ marginTop: getPos + 'px' })
+			})
+			$('#txt_msg').blur(function () {
+				//var getPos = $('body').height() - $(window).height(); //获取虚拟键盘高度
+				$('body, .js_resetHeight .chat, .js_getPosition, #chat .content').removeAttr('style')
+			})
+		})
+	</script>
+</body>
+</html>
