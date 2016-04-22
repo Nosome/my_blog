@@ -21,8 +21,9 @@ body{background:#f4f4f4;}
 .searchCon{float:right;}
 .searchCon input{color:#e3effa; padding:3px 25px 4px 12px; -webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px; border:1px solid #97c3f0; background:url(../images/blog_08.jpg) no-repeat 168px center;}
 .searchCon a{color:#e3effa;}
-
-.banner{width:1000px; height:438px; margin-top:15px; position:relative;}
+.banner{ width:1000px; height:438px; margin-top:15px; position:relative; overflow:hidden; }
+.banner ul{ width:5000px; }
+.banner ul li{ float:left; }
 .banner a.ban_control{width:29px; height:50px; display:block; position:absolute; top:194px;}
 
 .content_left{width:590px; float:left;}

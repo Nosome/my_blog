@@ -4,9 +4,9 @@
 var timeID;
 var image;
 var current = 0;
-var images  = new Array(6);
+var images = new Array(5);
 function init() {
-    for (var i = 1; i <= 6; i++) {
+    for (var i = 1; i <= 5; i++) {
         images[i]     = new Image(1000, 438);
         images[i].src = "static/images/blog_1" + i + ".jpg";
     }
@@ -19,14 +19,14 @@ function setSrc(i) {
 }
 function pre() {
     if (current <= 1) {
-        setSrc(6);
+        setSrc(5);
     } else {
         current--;
         setSrc(current);
     }
 }
 function next() {
-    if (current >= 6) {
+    if (current >= 5) {
         setSrc(1);
     } else {
         current++;
@@ -34,7 +34,7 @@ function next() {
     }
 }
 function play() {
-    if (current >= 6) {
+    if (current >= 5) {
         current = 0;
     }
     setSrc(++current);
